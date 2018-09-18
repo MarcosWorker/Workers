@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "16481496059",
+    "firebase_url": "https://workers-b23ef.firebaseio.com",
+    "project_id": "workers-b23ef",
+    "storage_bucket": "workers-b23ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16481496059:android:5541509762ee6d1c",
+        "android_client_info": {
+          "package_name": "com.example.marcosmarques.workers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16481496059-s07kqjhsjgtt7f6sl87aaih1qhkgv6ek.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.marcosmarques.workers",
+            "certificate_hash": "abba21ae3f5e480a66473684a629b173dcdf4c5f"
+          }
+        },
+        {
+          "client_id": "16481496059-1l5cherjoqm24i2g743nvk00f5d9nulr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6hz7aAZK2_2jItaMBRQgmtJKElBNDUn8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16481496059-1l5cherjoqm24i2g743nvk00f5d9nulr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
