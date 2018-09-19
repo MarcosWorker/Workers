@@ -48,4 +48,5 @@
         android:text="local"
         android:textSize="15dp"
         android:textStyle="bold" />
+
 </RelativeLayout>

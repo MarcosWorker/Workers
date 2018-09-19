@@ -10,6 +10,7 @@ public class Anuncio {
     private String descricao;
     private String telefone;
     private String local;
+    private String tipo;
 
     public Anuncio() {
     }
@@ -52,5 +53,13 @@ public class Anuncio {
 
     public void setLocal(String local) {
         this.local = local;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }

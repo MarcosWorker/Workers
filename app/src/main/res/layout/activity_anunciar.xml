@@ -53,13 +53,31 @@
         android:textSize="15dp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/txt_tipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/local"
+        android:layout_margin="8dp"
+        android:text="Tipo de anuncio"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spinner_tipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txt_tipo"
+        android:layout_margin="8dp" />
+
     <Button
-        android:id="@+id/button"
+        android:id="@+id/salvar_anuncio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/servico"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="191dp"
         android:background="@color/colorPrimary"
         android:text="Anunciar"
         android:textColor="#fff" />

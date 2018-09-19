@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">Workers</string>
+
+    <string-array name="tipos">
+        <item>Automóveis</item>
+        <item>Arte</item>
+        <item>Beleza</item>
+        <item>Construção</item>
+        <item>Comida</item>
+        <item>Domésticos</item>
+        <item>Depilação</item>
+        <item>Educação Física</item>
+        <item>Elétrica</item>
+        <item>Eletrônica</item>
+        <item>Entregas</item>
+        <item>Estudos</item>
+        <item>Festas</item>
+        <item>Fretes</item>
+        <item>Garçon</item>
+        <item>Informática</item>
+        <item>Jardinagem</item>
+        <item>Motos</item>
+        <item>Massagem</item>
+        <item>Música</item>
+        <item>Pintura</item>
+        <item>Saúde</item>
+        <item>Sexo</item>
+        <item>Viagens</item>
+        <item>Outros</item>
+    </string-array>
 </resources>
