@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:layout_margin="4sp"
+    android:background="@drawable/border_circle"
+    android:padding="8sp">
 
 
     <TextView
@@ -11,9 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_margin="8dp"
-        android:text="Serviço prestado"
-        android:textSize="20dp"
+        android:layout_margin="4sp"
+        android:textColor="#fff"
         android:textStyle="bold" />
 
     <TextView
@@ -22,10 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/servico"
-        android:layout_margin="8dp"
-        android:text="Descrição do serviço"
-        android:textSize="15dp"
-        android:textStyle="bold" />
+        android:layout_margin="4sp"
+        android:textColor="#fff"/>
 
     <TextView
         android:id="@+id/telefone"
@@ -33,9 +34,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/descricao"
-        android:layout_margin="8dp"
-        android:text="Telefone"
-        android:textSize="20dp"
+        android:layout_margin="4sp"
+        android:textColor="#fff"
         android:textStyle="bold" />
 
     <TextView
@@ -44,9 +44,25 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/telefone"
-        android:layout_margin="8dp"
-        android:text="local"
-        android:textSize="15dp"
-        android:textStyle="bold" />
+        android:layout_margin="4sp"
+        android:textColor="#fff" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_alignEnd="@+id/servico"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/local"
+        android:layout_margin="4sp"
+        android:gravity="right"
+        android:textColor="#fff"
+        tools:ignore="RtlHardcoded" />
 
 </RelativeLayout>

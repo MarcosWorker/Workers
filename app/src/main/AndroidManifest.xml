@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.marcosmarques.workers">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -8,7 +12,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="true"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".flow.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +24,7 @@
         </activity>
         <activity android:name=".flow.HomeActivity" />
         <activity android:name=".flow.AnunciarActivity" />
-        <activity android:name=".flow.MeusAnunciosActivity"></activity>
+        <activity android:name=".flow.MeusAnunciosActivity" />
     </application>
 
 </manifest>

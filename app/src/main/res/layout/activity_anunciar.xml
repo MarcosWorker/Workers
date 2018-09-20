@@ -12,9 +12,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_margin="8dp"
-        android:hint="Serviço prestado"
+        android:hint="@string/servico_prestado"
         android:inputType="textMultiLine"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
@@ -24,9 +24,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/servico"
         android:layout_margin="8dp"
-        android:hint="Descrição do serviço"
+        android:hint="@string/descricao_do_servico"
         android:inputType="textMultiLine"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
     <EditText
@@ -36,9 +36,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/descricao"
         android:layout_margin="8dp"
-        android:hint="Telefone"
+        android:hint="@string/telefone"
         android:inputType="phone"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
@@ -48,9 +48,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/telefone"
         android:layout_margin="8dp"
-        android:hint="local"
+        android:hint="@string/local"
         android:inputType="textMultiLine"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
     <TextView
@@ -60,8 +60,8 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/local"
         android:layout_margin="8dp"
-        android:text="Tipo de anuncio"
-        android:textSize="15dp"
+        android:text="@string/tipo_de_anuncio"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
     <Spinner
@@ -78,7 +78,8 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/servico"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:text="Anunciar"
+        android:background="@drawable/buton_circle"
+        android:text="@string/anunciar"
+        android:textStyle="bold"
         android:textColor="#fff" />
 </RelativeLayout>

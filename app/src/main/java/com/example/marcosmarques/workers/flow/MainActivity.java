@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "TELA DE LOGIN -";
     private FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
-    //    private ProgressDialog progress = new ProgressDialog(this);
-    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            assert user != null;
                             Toast.makeText(MainActivity.this, "Seja bem vindo " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
                             goHome();
                         } else {
@@ -133,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void goHome() {
-        intent = new Intent(MainActivity.this, HomeActivity.class);
+        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
         startActivity(intent);
         finish();
     }

@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Workers</string>
+    <string name="servico_prestado">Serviço prestado</string>
+    <string name="descricao_do_servico">Descrição do serviço</string>
+    <string name="telefone">Telefone</string>
+    <string name="local">local</string>
+    <string name="tipo_de_anuncio">Tipo de anuncio</string>
+    <string name="anunciar">Anunciar</string>
+    <string name="usuario">usuario</string>
 
     <string-array name="tipos">
         <item>Automóveis</item>

@@ -32,19 +32,11 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
 
     private Intent intent;
-    // [START declare_auth]
     private FirebaseAuth mAuth;
-    // [END declare_auth]
     private GoogleSignInClient mGoogleSignInClient;
-
-
-    private RecyclerView recyclerView = null;
-    private RecyclerView.LayoutManager mLayoutManager = null;
-    private AdapterAnuncio adapterAnuncio = null;
     private List<Anuncio> anuncios;
     private Anuncio anuncio;
     private DatabaseReference mDatabase;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,24 +44,17 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         setTitle("Anuncios");
 
-        // [START config_signin]
-        // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-        // [END config_signin]
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        // [START initialize_auth]
         mAuth = FirebaseAuth.getInstance();
-        // [END initialize_auth]
 
-        //pegar referencia do objeto usuario no firebase database
         mDatabase = FirebaseDatabase.getInstance().getReference("anuncios");
 
-        //inicializa lista
         anuncios = new ArrayList<>();
     }
 
@@ -154,9 +139,9 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void list() {
-        recyclerView = (RecyclerView) findViewById(R.id.list_home);
-        adapterAnuncio = new AdapterAnuncio(anuncios);
-        mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        RecyclerView recyclerView = findViewById(R.id.list_home);
+        AdapterAnuncio adapterAnuncio = new AdapterAnuncio(anuncios, getClass().getSimpleName(), HomeActivity.this);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(adapterAnuncio);
     }

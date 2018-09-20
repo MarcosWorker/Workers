@@ -6,6 +6,9 @@ import com.google.firebase.database.IgnoreExtraProperties;
 public class Anuncio {
 
     private String id;
+    private String uId;
+    private String image;
+    private String usuario;
     private String servico;
     private String descricao;
     private String telefone;
@@ -13,6 +16,30 @@ public class Anuncio {
     private String tipo;
 
     public Anuncio() {
+    }
+
+    public String getuId() {
+        return uId;
+    }
+
+    public void setuId(String uId) {
+        this.uId = uId;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getId() {

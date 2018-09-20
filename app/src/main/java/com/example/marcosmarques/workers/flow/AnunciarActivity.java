@@ -12,8 +12,12 @@ import android.widget.Toast;
 
 import com.example.marcosmarques.workers.R;
 import com.example.marcosmarques.workers.model.Anuncio;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 public class AnunciarActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -21,12 +25,9 @@ public class AnunciarActivity extends AppCompatActivity implements AdapterView.O
     private EditText descricao;
     private EditText telefone;
     private EditText local;
-    private Spinner tipo;
-    private ArrayAdapter<CharSequence> adapter;
     private String tipoSelecionado;
-    private Button salvar;
     private DatabaseReference mDatabase;
-    private Anuncio anuncio;
+    private FirebaseUser user;
 
 
     @Override
@@ -35,13 +36,13 @@ public class AnunciarActivity extends AppCompatActivity implements AdapterView.O
         setContentView(R.layout.activity_anunciar);
         setTitle("Novo Anuncio");
 
-        servico = (EditText) findViewById(R.id.servico);
-        descricao = (EditText) findViewById(R.id.descricao);
-        telefone = (EditText) findViewById(R.id.telefone);
-        local = (EditText) findViewById(R.id.local);
-        tipo = (Spinner) findViewById(R.id.spinner_tipo);
+        servico = findViewById(R.id.servico);
+        descricao = findViewById(R.id.descricao);
+        telefone = findViewById(R.id.telefone);
+        local = findViewById(R.id.local);
+        Spinner tipo = findViewById(R.id.spinner_tipo);
 
-        adapter = ArrayAdapter.createFromResource(this,
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.tipos, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -49,7 +50,7 @@ public class AnunciarActivity extends AppCompatActivity implements AdapterView.O
         tipo.setAdapter(adapter);
         tipo.setOnItemSelectedListener(this);
 
-        salvar = (Button) findViewById(R.id.salvar_anuncio);
+        Button salvar = findViewById(R.id.salvar_anuncio);
         salvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +60,14 @@ public class AnunciarActivity extends AppCompatActivity implements AdapterView.O
 
         //pegar referencia do objeto usuario no firebase database
         mDatabase = FirebaseDatabase.getInstance().getReference("anuncios");
+
+        // [START initialize_auth]
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        // [END initialize_auth]
+
+        user = mAuth.getCurrentUser();
+
+
     }
 
     @Override
@@ -82,12 +91,16 @@ public class AnunciarActivity extends AppCompatActivity implements AdapterView.O
         } else {
             String id = mDatabase.push().getKey();
 
-            anuncio = new Anuncio();
+            Anuncio anuncio = new Anuncio();
             anuncio.setDescricao(descricao.getText().toString());
             anuncio.setLocal(local.getText().toString());
             anuncio.setServico(servico.getText().toString());
             anuncio.setTelefone(telefone.getText().toString());
             anuncio.setTipo(tipoSelecionado);
+            anuncio.setUsuario(user.getDisplayName());
+            anuncio.setId(user.getUid());
+            anuncio.setuId(id);
+            anuncio.setImage(Objects.requireNonNull(user.getPhotoUrl()).toString());
 
             mDatabase.child(id).setValue(anuncio);
 
