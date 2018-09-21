@@ -68,13 +68,9 @@ public class AdapterAnuncio extends RecyclerView.Adapter<AdapterAnuncio.ViewHold
                     callIntent.setData(Uri.parse("tel://" + anuncio.getTelefone()));
                     context.startActivity(callIntent);
                 } else if (nameActivity.equals("MeusAnunciosActivity")) {
-                    //Cria o gerador do AlertDialog
                     AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-                    //define o titulo
                     builder.setTitle(anuncio.getUsuario());
-                    //define a mensagem
                     builder.setMessage("Você deseja excluir esse anuncio?");
-                    //define um botão como positivo
                     builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface arg0, int arg1) {
                             DatabaseReference dR = FirebaseDatabase.getInstance().getReference("anuncios").child(anuncio.getuId());
@@ -82,15 +78,12 @@ public class AdapterAnuncio extends RecyclerView.Adapter<AdapterAnuncio.ViewHold
                             Toast.makeText(v.getContext(), "Anuncio deletado", Toast.LENGTH_LONG).show();
                         }
                     });
-                    //define um botão como negativo.
                     builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface arg0, int arg1) {
 
                         }
                     });
-                    //cria o AlertDialog
                     AlertDialog alerta = builder.create();
-                    //Exibe
                     alerta.show();
                 }
             }
