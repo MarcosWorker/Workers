@@ -1,5 +1,6 @@
 package com.example.marcosmarques.workers.flow;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,6 +18,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 
 public class AnunciarActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -101,6 +104,12 @@ public class AnunciarActivity extends AppCompatActivity implements AdapterView.O
             anuncio.setId(user.getUid());
             anuncio.setuId(id);
             anuncio.setImage(Objects.requireNonNull(user.getPhotoUrl()).toString());
+
+            Date data = new Date();
+            @SuppressLint("SimpleDateFormat") SimpleDateFormat dformatador = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String timestamp = dformatador.format(data);
+
+            anuncio.setTimestamp(timestamp);
 
             mDatabase.child(id).setValue(anuncio);
 

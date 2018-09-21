@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_margin="8dp"
         android:hint="@string/servico_prestado"
-        android:inputType="textMultiLine"
+        android:inputType="textImeMultiLine"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -25,7 +25,7 @@
         android:layout_below="@+id/servico"
         android:layout_margin="8dp"
         android:hint="@string/descricao_do_servico"
-        android:inputType="textMultiLine"
+        android:inputType="textLongMessage"
         android:textSize="15sp"
         android:textStyle="bold" />
 
@@ -49,7 +49,7 @@
         android:layout_below="@+id/telefone"
         android:layout_margin="8dp"
         android:hint="@string/local"
-        android:inputType="textMultiLine"
+        android:inputType="textImeMultiLine"
         android:textSize="15sp"
         android:textStyle="bold" />
 

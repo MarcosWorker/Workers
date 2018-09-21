@@ -22,11 +22,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
@@ -36,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private List<Anuncio> anuncios;
     private Anuncio anuncio;
-    private DatabaseReference mDatabase;
+    private Query mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("anuncios");
+        mDatabase = FirebaseDatabase.getInstance().getReference("anuncios").orderByChild("timestamp");
 
         anuncios = new ArrayList<>();
     }
@@ -79,6 +80,8 @@ public class HomeActivity extends AppCompatActivity {
                     anuncio = dataSnapshot.getValue(Anuncio.class);
                     anuncios.add(anuncio);
                 }
+
+                Collections.reverse(anuncios);
                 list();
             }
 

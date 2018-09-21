@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="ffffff" />
+                                                <entry key="color" value="1f72b2" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -34,7 +34,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_find_replace_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_person_pin_circle_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -44,10 +44,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundColor" value="1f72b2" />
                                       <entry key="cropped" value="true" />
-                                      <entry key="iconShape" value="CIRCLE" />
-                                      <entry key="outputName" value="ic_launcher_round" />
+                                      <entry key="iconShape" value="NONE" />
+                                      <entry key="outputName" value="ic_local" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -66,6 +65,11 @@
                 </map>
               </option>
             </PersistentState>
+          </value>
+        </entry>
+        <entry key="vectorWizard">
+          <value>
+            <PersistentState />
           </value>
         </entry>
       </map>

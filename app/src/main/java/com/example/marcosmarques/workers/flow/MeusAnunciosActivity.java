@@ -13,11 +13,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MeusAnunciosActivity extends AppCompatActivity {
@@ -25,7 +26,7 @@ public class MeusAnunciosActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private List<Anuncio> anuncios;
     private Anuncio anuncio;
-    private DatabaseReference mDatabase;
+    private Query mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class MeusAnunciosActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("anuncios");
+        mDatabase = FirebaseDatabase.getInstance().getReference("anuncios").orderByChild("timestamp");
 
         anuncios = new ArrayList<>();
     }
@@ -58,6 +59,8 @@ public class MeusAnunciosActivity extends AppCompatActivity {
                         anuncios.add(anuncio);
                     }
                 }
+
+                Collections.reverse(anuncios);
                 list();
             }
 

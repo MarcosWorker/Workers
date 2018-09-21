@@ -3,16 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#d7d7d9"
+    android:background="@drawable/background"
     tools:context=".flow.MainActivity">
 
     <ImageView
-        android:layout_width="201dp"
-        android:layout_height="169dp"
+        android:layout_width="149dp"
+        android:layout_height="133dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="62dp"
-        android:background="@mipmap/ic_launcher" />
+        android:layout_marginTop="82dp"
+        android:background="@mipmap/ic_launcher"
+        android:contentDescription="@string/todo" />
 
 
     <com.google.android.gms.common.SignInButton
@@ -21,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="38dp"
+        android:layout_marginBottom="106dp"
         tools:layout_editor_absoluteX="90dp"
         tools:layout_editor_absoluteY="360dp" />
 
@@ -30,20 +31,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="128dp"
-        android:text="Anúncio fácil e rápido"
+        android:layout_marginBottom="25dp"
+        android:text="@string/slogan"
+        android:textColor="#fff"
         android:textSize="20sp"
         android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="193dp"
-        android:text="WORKERS"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
 
 </RelativeLayout>

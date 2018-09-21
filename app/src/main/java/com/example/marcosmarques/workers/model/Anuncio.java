@@ -14,8 +14,17 @@ public class Anuncio {
     private String telefone;
     private String local;
     private String tipo;
+    private String timestamp;
 
     public Anuncio() {
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getuId() {
