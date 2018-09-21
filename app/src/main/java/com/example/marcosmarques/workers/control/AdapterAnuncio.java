@@ -63,10 +63,10 @@ public class AdapterAnuncio extends RecyclerView.Adapter<AdapterAnuncio.ViewHold
             @Override
             public void onClick(final View v) {
                 if (nameActivity.equals("HomeActivity")) {
-//                    Uri uri = Uri.parse(anuncio.getTelefone());
-//                    Intent it = new Intent(Intent.ACTION_DIAL,uri);
-//                    context.startActivity(it);
-
+                    Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                    callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+                    callIntent.setData(Uri.parse("tel://" + anuncio.getTelefone()));
+                    context.startActivity(callIntent);
                 } else if (nameActivity.equals("MeusAnunciosActivity")) {
                     //Cria o gerador do AlertDialog
                     AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
